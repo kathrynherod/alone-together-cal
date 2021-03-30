@@ -5,11 +5,11 @@ export default Controller.extend({
     posters: computed(function() {
         return [
             'Bobby',
-            'Monica',
+            'Emily',
             'Rachel',
             'Tricia',
             'Josh Litton',
-            'Emily',
+            'Monica',
             'Lauren',
             'Brandon',
             'Nicole',
