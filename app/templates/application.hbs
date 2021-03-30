@@ -1,10 +1,22 @@
 <h1>Culture Club - Alone Together Prompt Assignments</h1>
 
+<div class="legend">
+    <h4>Legend:</h4>
+    <div class="items">
+        {{#each posters as |poster|}}
+            <div class="legend__poster">
+                <h6 class={{poster}}>{{poster}}</h6>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+
 {{#each months as |month|}}
     <hr>
     <h2>{{month.name}}</h2>
-    <div class="table-responsive">
 
+    <div class="table-responsive">
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -16,142 +28,12 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each-in month.weeks as |week days index|}}
-                    <tr>
-                        {{#if (eq week month.firstWeek)}}
-                            {{#if (eq days.length 1)}}
-                                {{#each days as |day|}}
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <div class="date">
-                                            {{day.date}}
-                                        </div>
-                                        <div class="poster">
-                                            {{day.poster}}
-                                        </div>
-                                    </td>
-                                {{/each}}
-                            {{else if (eq days.length 2)}}
-                                <td></td>
-                                <td></td>
-                                {{#each days as |day index|}}
-                                    {{#if (eq index 0)}}
-                                        <td>
-                                            <div class="date">
-                                                {{day.date}}
-                                            </div>
-                                            <div class="poster">
-                                                {{day.poster}}
-                                            </div>
-                                        </td>
-                                        <td></td>
-                                    {{else}}
-                                        <td>
-                                            <div class="date">
-                                                {{day.date}}
-                                            </div>
-                                            <div class="poster">
-                                                {{day.poster}}
-                                            </div>
-                                        </td>
-                                    {{/if}}
-                                {{/each}}
-                            {{else}}
-                                {{#each days as |day index|}}
-                                    {{#if (eq index 1)}}
-                                        <td></td>
-                                        <td>
-                                            <div class="date">
-                                                {{day.date}}
-                                            </div>
-                                            <div class="poster">
-                                                {{day.poster}}
-                                            </div>
-                                        </td>
-                                        <td></td>
-                                    {{else}}
-                                        <td>
-                                            <div class="date">
-                                                {{day.date}}
-                                            </div>
-                                            <div class="poster">
-                                                {{day.poster}}
-                                            </div>
-                                        </td>
-                                    {{/if}}
-                                {{/each}}
-                            {{/if}}
-                        {{else}}
-                            {{#if (eq days.length 1)}}
-                                {{#each days as |day|}}
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <div class="date">
-                                            {{day.date}}
-                                        </div>
-                                        <div class="poster">
-                                            {{day.poster}}
-                                        </div>
-                                    </td>
-                                {{/each}}
-                            {{else if (eq days.length 2)}}
-                                <td></td>
-                                <td></td>
-                                {{#each days as |day index|}}
-                                    {{#if (eq index 0)}}
-                                        <td>
-                                            <div class="date">
-                                                {{day.date}}
-                                            </div>
-                                            <div class="poster">
-                                                {{day.poster}}
-                                            </div>
-                                        </td>
-                                        <td></td>
-                                    {{else}}
-                                        <td>
-                                            <div class="date">
-                                                {{day.date}}
-                                            </div>
-                                            <div class="poster">
-                                                {{day.poster}}
-                                            </div>
-                                        </td>
-                                    {{/if}}
-                                {{/each}}
-                            {{else}}
-                                {{#each days as |day index|}}
-                                    {{#if (eq index 1)}}
-                                        <td></td>
-                                        <td>
-                                            <div class="date">
-                                                {{day.date}}
-                                            </div>
-                                            <div class="poster">
-                                                {{day.poster}}
-                                            </div>
-                                        </td>
-                                        <td></td>
-                                    {{else}}
-                                        <td>
-                                            <div class="date">
-                                                {{day.date}}
-                                            </div>
-                                            <div class="poster">
-                                                {{day.poster}}
-                                            </div>
-                                        </td>
-                                    {{/if}}
-                                {{/each}}
-                            {{/if}}
-                        {{/if}}
-                    </tr>
+                {{#each-in month.weeks as |week days|}}
+                    {{table-row
+                        week=week
+                        days=days
+                        firstWeek=month.firstWeek
+                    }}
                 {{/each-in}}
             </tbody>
         </table>

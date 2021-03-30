@@ -24,6 +24,14 @@ export default Controller.extend({
         const endOfYear = new Date('12/31/2021');
 
         const days = [];
+        const holidays = [
+            { date: 31, month: 4, name: 'Memorial Day' },
+            { date: 5, month: 6, name: 'Independence Day' },
+            { date: 6, month: 8, name: 'Labor Day' },
+            { date: 25, month: 10, name: 'Thanksgiving' },
+            { date: 26, month: 10, name: 'Thanksgiving' },
+            { date: 24, month: 11, name: 'Christmas '},
+        ];
         let day = startOfYear;
 
         const addDay = (dayToAddTo) => {
@@ -42,21 +50,34 @@ export default Controller.extend({
         let count = 0;
 
         while(day <= endOfYear) {
-            if (day.getDay() === 1 || day.getDay() === 3 || day.getDay() === 5) {
-                days.push({
-                    dayOfWeek: day.getDay(),
-                    weekNumber: getWeekNumber(day),
-                    month: day.getMonth(),
-                    date: day.getDate(),
-                    poster: posters[count],
-                });
-
-                if (count === 10) {
-                    count = 0
-                } else {
-                    count++;
-                }
+            const dayOfWeek = day.getDay();
+            const date = day.getDate();
+            const month = day.getMonth();
+            const holidayMatch = holidays.find(holiday => holiday.date === date && holiday.month === month);
+            const dateObj = {
+                dayOfWeek,
+                weekNumber: getWeekNumber(day),
+                month,
+                date,
             }
+
+            if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+                if (holidayMatch) {
+                    dateObj.poster = holidayMatch.name;
+
+                } else if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) {
+                    dateObj.poster = posters[count];
+
+                    if (count === 10) {
+                        count = 0
+                    } else {
+                        count++;
+                    }
+                }
+
+                days.push(dateObj);
+            }
+
             day = addDay(day)
         }
 

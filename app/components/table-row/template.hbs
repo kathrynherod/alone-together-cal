@@ -1,0 +1,10 @@
+{{#each blankTableDatum as |blankTableData|}}
+    <td></td>
+{{/each}}
+
+{{#each days as |day|}}
+    {{table-data
+        date=day.date
+        poster=day.poster
+    }}
+{{/each}}
