@@ -1,0 +1,13 @@
+h1, h2, th, .poster {
+    text-align: center;
+}
+
+.date {
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+
+h1, .table-responsive {
+    max-width: 100%;
+    padding: 1.5rem;
+}
