@@ -6,13 +6,13 @@ export default Controller.extend({
         return [
             'Bobby',
             'Emily',
-            'Rachel',
+            'Ashley',
             'Tricia',
             'Josh Litton',
             'Monica',
             'Lauren',
             'Brandon',
-            'Nicole',
+            'Amanda',
             'Josh Lanxner',
             'Kat',
         ];
@@ -87,16 +87,6 @@ export default Controller.extend({
     months: computed('days', function() {
         const days = this.get('days');
         const monthsArr = [
-            {
-                name: 'April',
-                month: 3,
-                weeks: {},
-            },
-            {
-                name: 'May',
-                month: 4,
-                weeks: {},
-            },
             {
                 name: 'June',
                 month: 5,
