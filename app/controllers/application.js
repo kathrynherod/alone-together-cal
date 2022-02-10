@@ -8,31 +8,41 @@ export default Controller.extend({
             'Emily',
             'Ashley',
             'Tricia',
-            'Josh Litton',
             'Monica',
             'Lauren',
             'Brandon',
             'Amanda',
-            'Josh Lanxner',
+            'Josh',
             'Kat',
+            'Caroline',
+            'Hannah',
+            'Jamie',
+            'Jared',
+            'Joseph',
+            'Paul',
+            'Rachel',
+            'Richard'
         ];
     }),
 
     days: computed(function() {
         const posters = this.get('posters');
-        const startOfYear = new Date('1/1/2021');
-        const endOfYear = new Date('12/31/2021');
+        const startDate = new Date('2/11/2022');
+        const endOfYear = new Date('12/31/2022');
 
         const days = [];
         const holidays = [
-            { date: 31, month: 4, name: 'Memorial Day' },
-            { date: 5, month: 6, name: 'Independence Day' },
-            { date: 6, month: 8, name: 'Labor Day' },
-            { date: 25, month: 10, name: 'Thanksgiving' },
-            { date: 26, month: 10, name: 'Thanksgiving' },
-            { date: 24, month: 11, name: 'Christmas '},
+            { date: 17, month: 0, name: 'Martin Luther King Jr. Day' },
+            { date: 21, month: 1, name: `President's Day` },
+            { date: 30, month: 4, name: 'Memorial Day' },
+            { date: 4, month: 6, name: 'Independence Day' },
+            { date: 5, month: 8, name: 'Labor Day' },
+            { date: 24, month: 10, name: 'Thanksgiving' },
+            { date: 25, month: 10, name: 'Thanksgiving (Day After)' },
+            { date: 23, month: 11, name: 'Christmas Eve'},
+            { date: 26, month: 11, name: 'Christmas'},
         ];
-        let day = startOfYear;
+        let day = startDate;
 
         const addDay = (dayToAddTo) => {
             const copy = new Date(Number(dayToAddTo))
@@ -65,11 +75,11 @@ export default Controller.extend({
                 if (holidayMatch) {
                     dateObj.poster = holidayMatch.name;
 
-                } else if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) {
+                } else if (dayOfWeek === 2 || dayOfWeek === 4) {
                     dateObj.poster = posters[count];
 
-                    if (count === 10) {
-                        count = 0
+                    if (count === posters.length - 1) {
+                        count = 0;
                     } else {
                         count++;
                     }
@@ -87,6 +97,31 @@ export default Controller.extend({
     months: computed('days', function() {
         const days = this.get('days');
         const monthsArr = [
+            // {
+            //     name: 'January',
+            //     month: 0,
+            //     weeks: {},
+            // },
+            {
+                name: 'February',
+                month: 1,
+                weeks: {},
+            },
+            {
+                name: 'March',
+                month: 2,
+                weeks: {},
+            },
+            {
+                name: 'April',
+                month: 3,
+                weeks: {},
+            },
+            {
+                name: 'May',
+                month: 4,
+                weeks: {},
+            },
             {
                 name: 'June',
                 month: 5,

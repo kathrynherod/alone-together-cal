@@ -39,36 +39,37 @@ h1, .table-responsive {
 th {
     width: 20%;
 }
-.Bobby {
+.Bobby, .Kat {
     background-image: linear-gradient(315deg, rgba(200, 56, 50, 0.25), rgba(200, 56, 50, 1)) ;
 }
-.Emily {
+.Emily, .Caroline {
     background-image: linear-gradient(315deg, rgba(255, 165, 0, 0.25), rgba(255, 165, 0, 1)) ;
 }
-.Ashley {
+.Ashley, .Hannah {
     background-image: linear-gradient(315deg, rgba(255, 255, 0, 0.25), rgba(255, 255, 0, 1)) ;
 }
-.Tricia {
+.Tricia, .Jamie {
     background-image: linear-gradient(315deg, rgba(154, 205, 50, 0.25), rgba(154, 205, 50, 1)) ;
 }
-.Litton {
-    background-image: linear-gradient(315deg, rgba(0, 128, 0, 0.25), rgba(0, 128, 0, 1)) ;
-}
-.Monica {
+.Monica, .Jared {
     background-image: linear-gradient(315deg, rgba(13,152,186, 0.25), rgba(13,152,186, 1))
 }
-.Lauren {
+.Lauren, .Joseph {
     background-image: linear-gradient(315deg, rgba(0, 0, 255, 0.25), rgba(0, 0, 255, 1)) ;
 }
-.Brandon {
+.Brandon, .Paul {
     background-image: linear-gradient(315deg, rgba(75, 0, 130, 0.25), rgba(75, 0, 130, 1)) ;
 }
-.Amanda {
+.Amanda, .Rachel {
     background-image: linear-gradient(315deg, rgba(238, 130, 238, 0.25), rgba(238, 130, 238, 1)) ;
 }
-.Lanxner {
+.Josh, .Richard {
+    background-image: linear-gradient(315deg, rgba(0, 128, 0, 0.25), rgba(0, 128, 0, 1)) ;
+}
+/*
+.Josh {
     background-image: linear-gradient(315deg, rgba(136, 113, 145, 0.25), rgba(136, 113, 145, 1));
 }
 .Kat {
     background-image: linear-gradient(315deg, rgba(128, 128, 128, 0.25), rgba(128, 128, 128, 1));
-}
+} */
