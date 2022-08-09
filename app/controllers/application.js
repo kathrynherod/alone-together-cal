@@ -4,6 +4,7 @@ import { computed } from '@ember/object';
 export default Controller.extend({
     posters: computed(function() {
         return [
+            'Paul',
             'Bobby',
             'Emily',
             'Ashley',
@@ -18,16 +19,13 @@ export default Controller.extend({
             'Hannah',
             'Jamie',
             'Jared',
-            'Joseph',
-            'Paul',
-            'Rachel',
             'Richard'
         ];
     }),
 
     days: computed(function() {
         const posters = this.get('posters');
-        const startDate = new Date('2/11/2022');
+        const startDate = new Date('8/11/2022');
         const endOfYear = new Date('12/31/2022');
 
         const days = [];
@@ -102,36 +100,36 @@ export default Controller.extend({
             //     month: 0,
             //     weeks: {},
             // },
-            {
-                name: 'February',
-                month: 1,
-                weeks: {},
-            },
-            {
-                name: 'March',
-                month: 2,
-                weeks: {},
-            },
-            {
-                name: 'April',
-                month: 3,
-                weeks: {},
-            },
-            {
-                name: 'May',
-                month: 4,
-                weeks: {},
-            },
-            {
-                name: 'June',
-                month: 5,
-                weeks: {},
-            },
-            {
-                name: 'July',
-                month: 6,
-                weeks: {},
-            },
+            // {
+            //     name: 'February',
+            //     month: 1,
+            //     weeks: {},
+            // },
+            // {
+            //     name: 'March',
+            //     month: 2,
+            //     weeks: {},
+            // },
+            // {
+            //     name: 'April',
+            //     month: 3,
+            //     weeks: {},
+            // },
+            // {
+            //     name: 'May',
+            //     month: 4,
+            //     weeks: {},
+            // },
+            // {
+            //     name: 'June',
+            //     month: 5,
+            //     weeks: {},
+            // },
+            // {
+            //     name: 'July',
+            //     month: 6,
+            //     weeks: {},
+            // },
             {
                 name: 'August',
                 month: 7,
